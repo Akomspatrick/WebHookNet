@@ -22,15 +22,19 @@ namespace WebHookPoc.Controllers
         }
 
         [HttpPost(Name = "/PostData")]
-        public async Task<IActionResult> PostData([FromQuery(Name ="traceid")][Required] string traceid)
+        public async Task<IActionResult> PostData([FromBody] DPData analyticData)
         {
-            var analyticData = new DPData { Data = "AAA", key = "Pesonal key" };
+            
+            
             var dpData = new Dictionary<string, string>
             {
                 { "type","com.stepstone..." },
-                { "data",  JsonSerializer.Serialize(analyticData) },
+    
                 {"key","tobesuppliedin" },
-              
+
+                {"poc_name",analyticData.key },
+                {"poc_type",analyticData.Data },
+
             };
             var response = await _egress.SendAnalyticDataAsync(dpData, _httpClientFactory.CreateClient("GalaxyAPI"));
             return Ok(response);
