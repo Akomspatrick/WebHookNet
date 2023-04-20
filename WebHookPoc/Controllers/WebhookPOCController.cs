@@ -21,6 +21,14 @@ namespace WebHookPoc.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+
+            return Ok("Site is Up....");
+        }
+
         [HttpPost(Name = "/PostData")]
         public async Task<IActionResult> PostData([FromBody] DPData analyticData)
         {
