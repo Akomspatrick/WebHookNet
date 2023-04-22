@@ -19,6 +19,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+app.Urls.Add(builder.Configuration["Server:OnlineEndPoint"]);
+app.Urls.Add(builder.Configuration["Server:LocalEndPoint"]);
+//app.Urls.Add(builder.Configuration["Server:LocalHttpsEndPoint"]);
 
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
@@ -32,5 +35,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-Console.WriteLine("App is running");
+Console.WriteLine($"App is running @ {builder.Configuration["Server:OnlineEndPoint"]} and {builder.Configuration["Server:LocalEndPoint"]}");
 app.Run();

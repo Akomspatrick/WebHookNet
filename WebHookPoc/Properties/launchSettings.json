@@ -3,12 +3,12 @@
     "WebHookPoc": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "swagger",
+      "launchUrl": "/api/WebhookPOC",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
-      "applicationUrl": "https://localhost:7274;http://localhost:5062"
+      "applicationUrl": "http://localhost:5063"
     },
     "IIS Express": {
       "commandName": "IISExpress",
