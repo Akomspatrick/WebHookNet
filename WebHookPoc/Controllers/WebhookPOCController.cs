@@ -47,5 +47,14 @@ namespace WebHookPoc.Controllers
             var response = await _egress.SendAnalyticDataAsync(dpData, _httpClientFactory.CreateClient("GalaxyAPI"));
             return Ok(response);
         }
+
+
+        [HttpPost("/Receive")]
+        public IActionResult Receive()
+        {
+
+            Console.WriteLine($"Signal received @ {DateTime.UtcNow.ToString()}");
+            return new ObjectResult("FInised");
+        }
     }
 }

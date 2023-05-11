@@ -23,7 +23,7 @@ app.Urls.Add(builder.Configuration["Server:OnlineEndPoint"]);
 app.Urls.Add(builder.Configuration["Server:LocalEndPoint"]);
 //app.Urls.Add(builder.Configuration["Server:LocalHttpsEndPoint"]);
 
-// Configure the HTTP request pipeline.
+//Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
 //    app.UseSwagger();
