@@ -26,7 +26,7 @@ namespace WebHookPoc.Controllers
         public IActionResult Get()
         {
 
-            return Ok("Site is Up....");
+            return Ok("Site is Up and Running....");
         }
 
         [HttpPost(Name = "/PostData")]
@@ -49,7 +49,7 @@ namespace WebHookPoc.Controllers
         }
 
 
-        [HttpPost("/Receive")]
+        [HttpPost("/Receive")] 
         public IActionResult Receive()
         {
 
